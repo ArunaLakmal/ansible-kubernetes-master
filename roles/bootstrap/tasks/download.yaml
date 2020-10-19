@@ -1,0 +1,5 @@
+- name: download packages and executables
+  get_url:
+    url: "{{ item }}"
+    dest: "{{ role_path}}/files"
+  loop: "{{ package_urls }}"

@@ -1,0 +1,36 @@
+---
+# defaults file for bootstrap
+apt_libraries:
+  - python3
+  - python3-distutils
+  - git
+  - jq
+  - make
+pip_packages:
+  - botocore
+  - boto
+  - boto3
+  - awscli
+ansible_galaxy_plugin: community.aws
+cfssl_version: R1.2
+cfssl_linux: cfssl_linux-amd64
+cfssl_json: cfssljson_linux-amd64
+cfssl_cert_info: cfssl-certinfo_linux-amd64
+kube_version: v1.18.9
+package_urls:
+  - "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/amd64/kubectl"
+  - "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/amd64/kube-apiserver"
+  - "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/amd64/kube-controller-manager"
+  - "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/amd64/kube-scheduler"
+  - "https://bootstrap.pypa.io/get-pip.py"
+  - "https://pkg.cfssl.org/{{ cfssl_version }}/cfssl_linux-amd64"
+  - "https://pkg.cfssl.org/{{ cfssl_version }}/cfssljson_linux-amd64"
+  - "https://pkg.cfssl.org/{{ cfssl_version }}/cfssl-certinfo_linux-amd64"
+directories:
+  - /etc/kubernetes/config
+  - /var/lib/kubernetes
+executable_binaries:
+  - "{{ role_path}}/files/kubectl"
+  - "{{ role_path}}/files/kube-apiserver"
+  - "{{ role_path}}/files/kube-controller-manager"
+  - "{{ role_path}}/files/kube-scheduler"
