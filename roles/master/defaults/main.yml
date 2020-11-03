@@ -1,2 +1,5 @@
 ---
 # defaults file for masters
+admin_kubeconfig_path: /var/lib/kubernetes/admin.kubeconfig
+kubeadmin_role_manifest: https://docs.techcrumble.net/cluster/kube-admin-cluster-role.yaml
+kubeadmin_role_binding_manifest: https://docs.techcrumble.net/cluster/kube-admin-cluster-role-binding.yaml
