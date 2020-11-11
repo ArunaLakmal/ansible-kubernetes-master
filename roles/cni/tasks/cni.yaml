@@ -1,7 +1,7 @@
 - name: enable anonymous for temporary
   shell: kubectl create clusterrolebinding cluster-system-anonymous --clusterrole=cluster-admin --user=system:anonymous
   ignore_errors: yes
-  when: system-anonymous == "true"
+  when: system_anonymous == "true"
 
 - name: bridge network
   template:

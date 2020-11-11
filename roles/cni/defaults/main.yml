@@ -3,5 +3,5 @@
 plugin: "calico"
 pod_cidr: 10.200.0.0/16
 typha_count: 1
-system-anonymous: "true"
+system_anonymous: "true"
 calicoctl_url: "https://github.com/projectcalico/calicoctl/releases/download/v3.16.5/calicoctl"
