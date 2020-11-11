@@ -1,25 +1,25 @@
 - name: enable anonymous for temporary
   shell: kubectl create clusterrolebinding cluster-system-anonymous --clusterrole=cluster-admin --user=system:anonymous
   ignore_errors: yes
-  when: "system-anonymous == true"
+  when: system-anonymous == "true"
 
 - name: bridge network
   template:
     src: "{{ role_path }}/templates/10-bridge.conf.j2"
     dest: "/etc/cni/net.d/10-bridge.conf"
-  when: "plugin == bridge"
+  when: plugin == "bridge"
 
 - name: loop back network
   template:
     src: "{{ role_path }}/templates/99-loopback.conf.j2"
     dest: "/etc/cni/net.d/99-loopback.conf"
-  when: "plugin == bridge"
+  when: plugin == "bridge"
 
 - name: install calico cni for container networking
   community.kubernetes.k8s:
     state: present
     template: "{{ role_path }}/templates/calico.yaml.j2"
-  when: "plugin == calico"
+  when: plugin == "calico"
 
 - name: download calicoctl and install
   get_url:
