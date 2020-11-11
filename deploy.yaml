@@ -2,3 +2,4 @@
   roles:
   - roles/bootstrap
   - roles/master
+  - roles/cni

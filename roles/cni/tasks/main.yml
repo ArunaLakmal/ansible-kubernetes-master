@@ -1,0 +1,3 @@
+---
+# tasks file for cni
+- import_tasks: cni.yaml
