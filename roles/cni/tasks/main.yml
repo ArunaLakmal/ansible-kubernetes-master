@@ -1,3 +1,4 @@
 ---
 # tasks file for cni
+- import_tasks: kubeconfig.yaml
 - import_tasks: cni.yaml
