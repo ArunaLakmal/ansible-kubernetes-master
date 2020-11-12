@@ -1,0 +1,4 @@
+---
+# vars file for cni
+KUBECONFIG: /root/.kube/config
+DATASTORE_TYPE: kubernetes

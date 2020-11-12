@@ -12,6 +12,20 @@
     dest: "/var/lib/kubernetes/ca-key.pem"
     mode: get
 
+- name: download admin.pem
+  amazon.aws.aws_s3:
+    bucket: "{{ bucket }}"
+    object: /ca/admin.pem
+    dest: "/var/lib/kubernetes/admin.pem"
+    mode: get
+
+- name: download admin-key.pem
+  amazon.aws.aws_s3:
+    bucket: "{{ bucket }}"
+    object: /ca/admin-key.pem
+    dest: "/var/lib/kubernetes/admin-key.pem"
+    mode: get
+
 - name: download kubernetes-key.pem
   amazon.aws.aws_s3:
     bucket: "{{ bucket }}"
